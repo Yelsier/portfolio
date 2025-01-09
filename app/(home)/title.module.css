@@ -1,0 +1,104 @@
+.title {
+    display: block;
+    margin: auto;
+    font-size: 100px;
+    font-style: italic;
+    text-shadow: 3px 4px var(--blue);
+    animation: glitch 5s linear infinite;
+}
+
+.title span {
+    position: relative;
+}
+
+@keyframes glitch {
+
+    2%,
+    17% {
+        transform: translate(2px, 0) skew(0deg);
+    }
+
+    4%,
+    15% {
+        transform: translate(-2px, 0) skew(0deg);
+    }
+
+    16% {
+        transform: translate(0, 0) skew(5deg);
+    }
+
+    100% {
+        transform: translate(0, 0) skew(0deg);
+    }
+}
+
+.title span:before,
+.title span:after {
+    content: attr(title);
+    position: absolute;
+    left: 0;
+}
+
+.title span:before {
+    animation: glitchTop 1s linear infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+.title span:nth-child(2):before {
+    animation-delay: 0.3s;
+}
+
+.title span:nth-child(3):before {
+    animation-delay: 0.7s;
+}
+
+@keyframes glitchTop {
+
+    2%,
+    64% {
+        transform: translate(2px, -2px);
+    }
+
+    4%,
+    60% {
+        transform: translate(-2px, 2px);
+    }
+
+    62% {
+        transform: translate(13px, -1px) skew(-13deg);
+    }
+}
+
+.title span:after {
+    animation: glitchBotom 1.5s linear infinite;
+    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+.title span:nth-child(2):after {
+    animation-delay: 0.3s;
+}
+
+.title span:nth-child(3):after {
+    animation-delay: 0.7s;
+}
+
+
+
+@keyframes glitchBotom {
+
+    2%,
+    64% {
+        transform: translate(-2px, 0);
+    }
+
+    4%,
+    60% {
+        transform: translate(-2px, 0);
+    }
+
+    62% {
+        transform: translate(-22px, 5px) skew(21deg);
+    }
+}
