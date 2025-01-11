@@ -3,8 +3,9 @@
     margin: auto;
     font-size: 100px;
     font-style: italic;
-    text-shadow: 3px 4px var(--blue);
+    text-shadow: 1px 2px var(--blue), -1px -2px var(--red);
     animation: glitch 5s linear infinite;
+    line-height: 1em;
 }
 
 .title span {
@@ -101,4 +102,16 @@
     62% {
         transform: translate(-22px, 5px) skew(21deg);
     }
+}
+
+.subtitle {
+    font-family: var(--font-play), sans-serif;
+    color: var(--blue);
+    font-size: 24px;
+    text-align: left;
+    background: rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 10px var(--blue);
+    padding: 5px 20px;
+    border: 1px solid var(--blue);
+    font-weight: 700;
 }

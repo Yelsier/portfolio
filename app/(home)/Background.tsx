@@ -1,5 +1,6 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { CSSProperties, useEffect, useState } from "react";
+import styles from "./Background.module.css";
 
 interface GlitchSquare {
     id: number;
@@ -8,25 +9,31 @@ interface GlitchSquare {
     width: number; // Ancho del cuadrado
     height: number; // Alto del cuadrado
     opacity: number; // Opacidad del cuadrado
+    color: "white" | "gray"; // Color del cuadrado
+    animationDelay?: number; // Retraso de la animación
+    animationLength?: number; // Largo al que se reduce el cuadrado (entre 1 y minAnimationLength)
 }
 
-const maxOpacity = 0.2;
-const minOpacity = 0.1;
+const maxOpacity = 0.1;
+const minOpacity = 0.05;
 
-const maxSquares = 30;
+const maxSquares = 40;
 
-const maxWidth = 5; // Máximo ancho en porcentaje
-const minWidth = 2; // Mínimo ancho en porcentaje
+const maxWidth = 8; // Máximo ancho en porcentaje
+const minWidth = 4; // Mínimo ancho en porcentaje
 
-const maxHeight = 700;
+const maxHeight = 500;
 const minHeight = 200;
+
+const maxAnimationDelay = 2;
+const minAnimationLength = 0.3;
 
 const GlitchEffect: React.FC = () => {
     const [squares, setSquares] = useState<GlitchSquare[]>([]);
 
     useEffect(() => {
         // Función para generar cuadrados
-        const generateSquares = (count: number) => {
+        const generateSquares = (count: number, color: "white" | "gray", yPosition: number) => {
             const newSquares: GlitchSquare[] = [];
             let currentX = 0; // Puntero para el inicio de cada cuadrado
 
@@ -39,21 +46,27 @@ const GlitchEffect: React.FC = () => {
                     newSquares.push({
                         id: i,
                         x: currentX,
-                        y: Math.random() * 100, // Posición vertical aleatoria (puedes fijarla si quieres)
+                        y: yPosition,
                         width: 100 - currentX, // Ancho restante
                         height: Math.random() * (maxHeight - minHeight) + minHeight,
                         opacity: Math.random() * (maxOpacity - minOpacity) + minOpacity,
+                        color,
+                        animationDelay: Math.random() * maxAnimationDelay, // Retraso de la animación
+                        animationLength: Math.random() * (1 - minAnimationLength) + minAnimationLength, // Largo de la animación
                     });
-                    break
-                };
+                    break;
+                }
 
                 newSquares.push({
                     id: i,
                     x: currentX,
-                    y: Math.random() * 100, // Posición vertical aleatoria (puedes fijarla si quieres)
+                    y: yPosition,
                     width,
                     height: Math.random() * (maxHeight - minHeight) + minHeight,
                     opacity: Math.random() * (maxOpacity - minOpacity) + minOpacity,
+                    color,
+                    animationDelay: Math.random() * maxAnimationDelay, // Retraso de la animación
+                    animationLength: Math.random() * (1 - minAnimationLength) + minAnimationLength, // Largo de la animación
                 });
 
                 // Actualizar el puntero para el siguiente cuadrado
@@ -63,8 +76,14 @@ const GlitchEffect: React.FC = () => {
             return newSquares;
         };
 
-        setSquares(generateSquares(maxSquares));
+        const whiteSquares = generateSquares(maxSquares, "white", 0); // Blancos en la parte superior
+        const blackSquares = generateSquares(maxSquares, "gray", 100); // Negros en la parte inferior
+
+        setSquares([...whiteSquares, ...blackSquares]);
     }, []);
+
+    console.log(squares);
+
 
     return (
         <div
@@ -77,18 +96,23 @@ const GlitchEffect: React.FC = () => {
         >
             {squares.map((square) => (
                 <div
-                    key={square.id}
+                    className={styles.square}
+                    key={square.id + square.color}
                     style={{
                         position: "absolute",
-                        top: `0`,
+                        top: `${square.y === 0 ? 0 : "auto"}`, // Blancos arriba
+                        bottom: `${square.y === 100 ? 0 : "auto"}`, // Negros abajo
                         left: `${square.x}%`,
                         width: `${square.width}%`,
                         height: `${square.height}px`,
-                        backgroundColor: "white",
+                        backgroundColor: square.color,
                         opacity: square.opacity,
                         transform: "translateY(0) translateX(0)", // Evitar desplazamientos
                         pointerEvents: "none", // Evitar que interfiera con eventos
-                    }}
+                        transformOrigin: `${square.y === 0 ? "top" : "bottom"}`,
+                        animationDelay: `${square.animationDelay}s`,
+                        "--animationLength": `${square.animationLength}`
+                    } as CSSProperties}
                 />
             ))}
         </div>

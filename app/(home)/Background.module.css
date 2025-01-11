@@ -1,0 +1,15 @@
+.square{
+    animation: vertical 10s linear infinite;
+}
+
+@keyframes vertical {
+    0%{
+        transform: scaleY(1);
+    }
+    50%{
+        transform: scaleY(var(--animationLength));
+    }
+    100%{
+        transform: scaleY(1);
+    }
+}
