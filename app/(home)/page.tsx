@@ -9,18 +9,19 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faCircleDown } from "@fortawesome/free-regular-svg-icons";
 
 const SAIBA = localFont({ src: '../../public/fonts/SAIBA-45.otf' })
+const REFINERY = localFont({ src: '../../public/fonts/Refinery-25.ttf' })
 
 export default function Home() {
     return <>
         <div className={`fixed top-[0px] left-[0px] flex justify-between w-full z-10 items-center ${styles.header}`}>
             <div className="ml-[50px]">
                 <div className={styles.descargarCVContainer}>
-                    <button className={styles.descargarCV}>
+                    <a href={"/CV.pdf"} download={"CV_Yago_Claros_Seijo.pdf"} className={styles.descargarCV}>
                         <div className="flex gap-5">
                             <FontAwesomeIcon className="w-[20px]" icon={faCircleDown} />
                             <span>CV</span>
                         </div>
-                    </button>
+                    </a>
                 </div>
             </div>
             <header className="mr-[50px]">
@@ -62,13 +63,34 @@ export default function Home() {
                 </div>
             </div>
         </div>
-        <div className={`h-screen ${styles.about}`}>
-            <h2 className={"text-white"}>ACERCA DE MÍ</h2>
-        </div>
-        <div>
+        <section className={`${styles.about} `}>
+            <div className="mx-auto w-4/5 max-w-[700px] relative">
+                <h2 style={REFINERY.style} className={"text-white mb-10 text-7xl"}>ACERCA DE MÍ</h2>
+                <div className="mb-10">
+                    <div className={styles.cajaDescripcion}>/// ABOUT.DESCRIPTION_1</div>
+                    <div className="flex gap-1">
+                        <div className={styles.decorText}></div>
+                        <p className="text-white text-lg">Soy un desarrollador web autodidacta con experiencia en tecnologías como TypeScript, React y MongoDB. Mi pasión es construir aplicaciones funcionales y modernas, enfocándome en crear soluciones eficientes y escalables que se adapten a las necesidades de los usuarios y empresas.</p>
+                    </div>
+                </div>
+                <div>
+                    <div className={styles.cajaDescripcion}>/// ABOUT.DESCRIPTION_2</div>
+                    <div className="flex gap-1">
+                        <div className={styles.decorText}></div>
+                        <p className="text-white text-lg">Me destaco por ser resolutivo y por mi habilidad para analizar problemas desde diferentes perspectivas, encontrando soluciones rápidas e innovadoras. Mi compromiso con el aprendizaje constante me impulsa a mantenerme actualizado con las últimas tendencias y herramientas del desarrollo web, lo que me permite abordar cada desafío con una mentalidad proactiva y un enfoque en la mejora continua.</p>
+                    </div>
+                </div>
+            </div>
+            <div className={styles.decorBottom}>
+                /// SKILLS.MODULE
+                <br />
+                loading...
+            </div>
+        </section >
+        <div className={`h-screen ${styles.knowledge}`}>
             <h2>CONOCIMIENTOS</h2>
         </div>
-        <div>
+        <div className={`h-screen ${styles.projects}`}>
             <h2>PROYECTOS</h2>
         </div>
     </>
