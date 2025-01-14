@@ -134,7 +134,7 @@
     color: var(--blue);
     font-family: var(--font-play), sans-serif;
     line-height: 1.5em;
-    padding: 10px 15px;
+    padding: 1rem 1.5rem;
     text-align: justify;
     background: rgb(17 14 21);
     border: 2px solid rgb(68 23 27);
