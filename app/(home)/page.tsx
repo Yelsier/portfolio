@@ -7,6 +7,7 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faCircleDown } from "@fortawesome/free-regular-svg-icons";
+import TabsKnowledge from "./TabsKnowledge";
 
 const SAIBA = localFont({ src: '../../public/fonts/SAIBA-45.otf' })
 const REFINERY = localFont({ src: '../../public/fonts/Refinery-25.ttf' })
@@ -87,8 +88,11 @@ export default function Home() {
                 loading...
             </div>
         </section >
-        <div className={`h-screen ${styles.knowledge}`}>
-            <h2>CONOCIMIENTOS</h2>
+        <div className={`${styles.knowledge}`}>
+            <div className="mx-auto w-4/5 max-w-[1200px] relative">
+                <h2 style={REFINERY.style} className={"text-white mb-10 text-7xl"}>CONOCIMIENTOS</h2>
+                <TabsKnowledge />
+            </div>
         </div>
         <div className={`h-screen ${styles.projects}`}>
             <h2>PROYECTOS</h2>
