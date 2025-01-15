@@ -13,6 +13,14 @@
     text-shadow: -1px -1px var(--red-text), 1px 1px var(--blue);
 }
 
+.decorText {
+    height: auto;
+    width: 15px;
+    background: var(--red-decor);
+    display: block;
+    clip-path: polygon(0 calc(50% - 20px), 0 0, 100% 0, 100% 100%, 0 100%, 0 calc(50% + 20px), 30% calc(50% + 10px), 30% calc(50% - 10px));
+}
+
 .tabs {
     display: flex;
     justify-content: center;
