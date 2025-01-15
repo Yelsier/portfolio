@@ -1,0 +1,40 @@
+.home {
+    background: linear-gradient(180deg, rgb(20, 0, 0), rgb(0, 10, 20));
+}
+
+.home::after {
+    content: "";
+    background: linear-gradient(180deg, transparent, #000);
+    bottom: 0;
+    height: 302px;
+    display: block;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+}
+
+.enlace {
+    align-items: center;
+    border-style: solid;
+    border-width: 0 20px;
+    cursor: pointer;
+    display: inline-flex;
+    gap: 10px;
+    height: 48px;
+    justify-content: center;
+    min-width: 232px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    -webkit-user-select: none;
+    user-select: none;
+    border-image: url(/border-blue.svg) 0 20 fill;
+    color: var(--blue);
+    font-family: var(--font-play), sans-serif;
+    font-weight: 700;
+    text-shadow: 0px 0px 5px var(--blue);
+}
+
+.enlace svg {
+    filter: drop-shadow(0px 0px 3px var(--blue));
+}

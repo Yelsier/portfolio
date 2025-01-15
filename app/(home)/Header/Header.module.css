@@ -1,0 +1,75 @@
+.header {
+    background: linear-gradient(180deg, rgba(0, 0, 0, .65), transparent);
+    height: 112px;
+    pointer-events: none;
+}
+
+.menu,
+.descargarCVContainer {
+    -webkit-clip-path: polygon(16px 0, 100% 0, 100% 30px, calc(100% - 18px) 48px, calc(100% - 18px) 2000%, 0 2000%, 0 16px);
+    clip-path: polygon(16px 0, 100% 0, 100% 30px, calc(100% - 18px) 48px, calc(100% - 18px) 2000%, 0 2000%, 0 16px);
+    position: relative;
+    pointer-events: all;
+}
+
+.menulist,
+.descargarCV {
+    align-items: center;
+    background: rgb(23 11 16);
+    border: 2px solid var(--red-text);
+    display: flex;
+    height: 48px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: var(--red-text);
+}
+
+.menulist li,
+.descargarCV div {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    font-family: var(--font-play), sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    height: 100%;
+    line-height: 110%;
+    padding: 0 25px;
+    position: relative;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 10px var(--red-text), 1px 0px rgba(0, 0, 0, 0.5);
+}
+
+.menulist::before,
+.descargarCVContainer::before {
+    border-right: 19px solid transparent;
+    border-top: 19px solid var(--red-text);
+    content: "";
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+.menulist::after,
+.descargarCVContainer::after {
+    border-bottom: 21px solid var(--red-text);
+    border-left: 21px solid transparent;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    right: 0;
+    pointer-events: none;
+}
+
+.descargarCV svg {
+    filter: drop-shadow(0px 0px 10px var(--red-text));
+}
+
+.menulist li:hover,
+.descargarCV div:hover {
+    background: var(--red-text);
+    color: #000;
+    text-shadow: none;
+}

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react";
-import styles from "./home.module.css"
+import styles from "./Knowledge.module.css"
 import icons from "./SVGIcons";
 
 const TabsKnowledge = () => {
