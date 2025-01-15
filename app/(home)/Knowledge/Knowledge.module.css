@@ -1,7 +1,8 @@
 .knowledge {
     background: linear-gradient(180deg, var(--red-decor), rgb(0, 10, 20));
     padding-top: 5rem;
-    padding-bottom: 15rem;
+    padding-bottom: 8rem;
+    min-height: 100vh;
 }
 
 .knowledge h2 {
