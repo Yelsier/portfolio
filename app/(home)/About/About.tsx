@@ -23,11 +23,6 @@ const About = () => {
                 </div>
             </div>
         </div>
-        <div className={styles.decorBottom}>
-        /// SKILLS.MODULE
-            <br />
-            loading...
-        </div>
     </section >
 }
 

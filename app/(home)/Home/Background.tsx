@@ -82,9 +82,6 @@ const GlitchEffect: React.FC = () => {
         setSquares([...whiteSquares, ...blackSquares]);
     }, []);
 
-    console.log(squares);
-
-
     return (
         <div
             style={{

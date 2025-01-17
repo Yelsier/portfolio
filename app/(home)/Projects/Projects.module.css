@@ -1,0 +1,15 @@
+.projects {
+    background: black;
+    padding-top: 5rem;
+    padding-bottom: 8rem;
+    min-height: 100vh;
+    pointer-events: all;
+}
+
+.projects h2 {
+    color: white;
+    font-family: var(--font-play), sans-serif;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: -1px -1px var(--red-text), 1px 1px var(--blue);
+}

@@ -1,5 +1,7 @@
 .home {
     background: linear-gradient(180deg, rgb(20, 0, 0), rgb(0, 10, 20));
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .home::after {

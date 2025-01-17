@@ -39,21 +39,6 @@
     right: 0;
 }
 
-.about::before {
-    -webkit-mask: url(/transicion.svg) no-repeat center/cover;
-    mask: url(/transicion.svg) no-repeat center/cover;
-    content: "";
-    background: var(--red-decor);
-    /* Gradiente como fondo */
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 48px;
-    -webkit-mask-composite: destination-in;
-    mask-composite: intersect;
-}
-
 
 .cajaDescripcion {
     color: var(--red-text);
@@ -67,17 +52,4 @@
     background: var(--red-decor);
     display: block;
     clip-path: polygon(0 calc(50% - 20px), 0 0, 100% 0, 100% 100%, 0 100%, 0 calc(50% + 20px), 30% calc(50% + 10px), 30% calc(50% - 10px));
-}
-
-.decorBottom {
-    bottom: 15px;
-    direction: ltr;
-    font-size: 12px;
-    font-weight: 400;
-    left: 8px;
-    line-height: 110%;
-    position: absolute;
-    color: var(--red-text);
-    font-family: var(--font-play), sans-serif;
-    text-shadow: 0px 0px 5px var(--red-text);
 }
