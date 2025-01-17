@@ -4,6 +4,10 @@
     padding-bottom: 8rem;
     min-height: 100vh;
     pointer-events: all;
+    position: relative;
+    background-image: url(/dots-yellow-top.png), url(/dots-yellow-bottom.png);
+    background-position: 20px 20px, 20px calc(100% - 20px);
+    background-repeat: repeat-x, repeat-x;
 }
 
 .projects h2 {
@@ -12,4 +16,108 @@
     font-weight: 700;
     text-align: center;
     text-shadow: -1px -1px var(--red-text), 1px 1px var(--blue);
+}
+
+.card {
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--yellow);
+    padding: 2em 3em;
+    box-shadow: 0 0 10px var(--red-text);
+    background: var(--red-background);
+    clip-path: polygon(30px 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 30px);
+    position: relative;
+}
+
+.card::before {
+    border-right: 30px solid transparent;
+    border-top: 30px solid var(--yellow);
+    content: "";
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+.card::after {
+    border-bottom: 30px solid var(--yellow);
+    border-left: 30px solid transparent;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    right: 0;
+    pointer-events: none;
+}
+
+.cardTitle {
+    color: var(--yellow);
+    text-shadow: 0px 0px 10px var(--yellow), 1px 0px rgba(0, 0, 0, 0.5);
+    font-family: var(--font-play), sans-serif;
+    font-weight: 700;
+    text-align: center;
+    font-size: 2em;
+}
+
+.cardContent {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.cardDecor {
+    position: absolute;
+    right: 0;
+    top: -25px;
+    color: var(--yellow);
+    text-shadow: 0px 0px 10px var(--yellow), 1px 0px rgba(0, 0, 0, 0.5);
+    font-family: var(--font-play), sans-serif;
+    opacity: 0.5;
+}
+
+.cardLink {
+    border: 1px solid white;
+    color: white;
+    font-family: var(--font-play), sans-serif;
+    font-weight: 700;
+    padding: 0.5em 1em;
+}
+
+.cardImage {
+    position: relative;
+    width: 300px;
+    /* Ajusta según tu imagen */
+    height: 300px;
+    /* Ajusta según tu imagen */
+    background-color: var(--yellow);
+    /* Color de fondo que se aplica */
+}
+
+.cardImage {
+    background: var(--yellow);
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+    width: 150px;
+    height: 150px;
+}
+
+.hechoEn {
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+    color: var(--yellow);
+    font-family: var(--font-play), sans-serif;
+    text-shadow: 0px 0px 10px var(--yellow), 1px 0px rgba(0, 0, 0, 0.5);
+
+}
+
+.hechoEn path {
+    fill: var(--yellow);
+}
+
+.hechoEn svg {
+    width: 12px;
+    height: 12px;
+    filter: drop-shadow(0 0 5px var(--yellow));
 }
