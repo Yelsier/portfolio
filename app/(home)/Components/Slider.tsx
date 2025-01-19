@@ -22,11 +22,11 @@ const Slider: React.FC<{ elements: JSX.Element[], name: string, gap?: number, fa
 
     useEffect(() => {
         let controls;
-        let finalPoisiton = -width / 2 - (gap || DEFAULT_GAP);
+        const finalPosition = -width / 2 - (gap || DEFAULT_GAP);
 
         if (mustFinish) {
-            controls = animate(xTranslation, [xTranslation.get(), finalPoisiton], {
-                duration: duration * (1 - xTranslation.get() / finalPoisiton),
+            controls = animate(xTranslation, [xTranslation.get(), finalPosition], {
+                duration: duration * (1 - xTranslation.get() / finalPosition),
                 ease: "linear",
                 onComplete: () => {
                     setMustFinish(false);
@@ -34,7 +34,7 @@ const Slider: React.FC<{ elements: JSX.Element[], name: string, gap?: number, fa
                 }
             });
         } else {
-            controls = animate(xTranslation, [0, finalPoisiton], {
+            controls = animate(xTranslation, [0, finalPosition], {
                 duration,
                 repeat: Infinity,
                 repeatType: "loop",

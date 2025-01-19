@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import styles from "./Knowledge.module.css"
-import icons from "./SVGIcons";
+import icons from "../Components/SVGIcons";
 
 const TabsKnowledge = () => {
 

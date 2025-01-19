@@ -65,7 +65,7 @@ const Projects = () => {
         <div className="">
             <SectionTitle>PROYECTOS</SectionTitle>
             <Slider name="projects" elements={projects.map((project, index) => {
-                return <div className="relative flex-shrink-0">
+                return <div key={project.title + "_" + index} className="relative flex-shrink-0">
                     <div className={styles.cardDecor}>
                         PROJECT :: WEB_{index % projects.length}
                     </div>

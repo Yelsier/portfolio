@@ -149,6 +149,14 @@
     mask-composite: intersect;
 }
 
+.icon {
+    width: 30px;
+    height: 30px;
+    background: var(--blue);
+    mask-size: 100%;
+    mask-position: center;
+}
+
 @keyframes flicker {
 
     0%,

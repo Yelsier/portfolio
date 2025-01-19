@@ -6,7 +6,7 @@ const Knowledge = () => {
 
     return <section id="knowledge" className={`pt-32 2xl:pt-20 ${styles.knowledge}`}>
         <div className={styles.decorBottom}>
-        /// SKILLS.MODULE
+            {"///"} SKILLS.MODULE
             <br />
             loading...
         </div>

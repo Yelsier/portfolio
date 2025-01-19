@@ -5,6 +5,7 @@ import "./globals.css";
 const playfont = Play({
     weight: ["400", "700"],
     variable: "--font-play",
+    subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
