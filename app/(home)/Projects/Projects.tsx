@@ -1,8 +1,8 @@
 import styles from "./Projects.module.css"
 import Image from "next/image"
 import Link from "next/link";
-import NextJS from "@/public/logos/nextjs.svg"
-import WordPress from "@/public/logos/wordpress.svg"
+import NextJS from "../Components/icons/NextJS";
+import WordPress from "../Components/icons/WordPress";
 import Slider from "../Components/Slider";
 import SectionTitle from "../Components/SectionTitle";
 

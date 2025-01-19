@@ -2,8 +2,8 @@ import Header from "./Header/Header";
 import About from "./About/About";
 import Home from "./Home/Home";
 import Knowledge from "./Knowledge/Knowledge";
-/* import Projects from "./Projects/Projects"; */
-/* import Transition from "./Components/Transition"; */
+import Projects from "./Projects/Projects";
+import Transition from "./Components/Transition";
 
 export default function Page() {
     return (
@@ -12,9 +12,7 @@ export default function Page() {
             <main>
                 <Home />
                 <About />
-                <Knowledge />
-                {/* <Projects /> */}
-                {/* <Transition FromElement={<Knowledge />} ToElement={<Projects />} /> */}
+                <Transition FromElement={<Knowledge />} ToElement={<Projects />} />
             </main>
         </>
     );
