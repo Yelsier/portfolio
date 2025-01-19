@@ -81,43 +81,67 @@
     font-family: var(--font-play), sans-serif;
     font-weight: 700;
     padding: 0.5em 1em;
-}
-
-.cardImage {
+    text-align: center;
+    clip-path: polygon(100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 0);
     position: relative;
-    width: 300px;
-    /* Ajusta según tu imagen */
-    height: 300px;
-    /* Ajusta según tu imagen */
-    background-color: var(--yellow);
-    /* Color de fondo que se aplica */
+    z-index: 1;
 }
 
-.cardImage {
-    background: var(--yellow);
-    mask-position: center;
-    mask-repeat: no-repeat;
-    mask-size: 100% 100%;
-    width: 150px;
-    height: 150px;
+.cardLink::after {
+    content: "";
+    border-bottom: 15px solid white;
+    border-left: 15px solid transparent;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    right: 0;
+    pointer-events: none;
 }
 
-.hechoEn {
+.cardLink:hover {
+    background: white;
+    color: black;
+}
+
+.hechoEnContainer {
     display: flex;
     gap: 0.5em;
     align-items: center;
     color: var(--yellow);
     font-family: var(--font-play), sans-serif;
     text-shadow: 0px 0px 10px var(--yellow), 1px 0px rgba(0, 0, 0, 0.5);
+}
 
+.hechoEn {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    color: white;
+    text-shadow: 0px 0px 10px white, 1px 0px rgba(0, 0, 0, 0.5);
 }
 
 .hechoEn path {
-    fill: var(--yellow);
+    fill: white
 }
 
 .hechoEn svg {
     width: 12px;
     height: 12px;
-    filter: drop-shadow(0 0 5px var(--yellow));
+    filter: drop-shadow(0 0 5px white);
+}
+
+.backdrop {
+    position: absolute;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    top: -2px;
+    left: -2px;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.card:hover .backdrop {
+    opacity: 1;
 }

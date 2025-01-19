@@ -5,7 +5,7 @@ const REFINERY = localFont({ src: '../../../public/fonts/Refinery-25.ttf' })
 
 const About = () => {
 
-    return <section className={`${styles.about} `}>
+    return <section id="about" className={`${styles.about} `}>
         <div className="mx-auto w-4/5 max-w-[700px] relative">
             <h2 style={REFINERY.style} className={"text-white mb-10 text-7xl"}>ACERCA DE MÍ</h2>
             <div className="mb-10">

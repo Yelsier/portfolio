@@ -32,7 +32,7 @@ const Transition: React.FC<{ FromElement: React.ReactNode, ToElement: React.Reac
         <>
             <div className="relative">
                 {/* Aplicamos posición fija si `isFixed` es true */}
-                <div ref={element1ContainerRef} style={{ height: element1Ref?.current?.offsetHeight }}>
+                <div className="relative" ref={element1ContainerRef} style={{ height: element1Ref?.current?.offsetHeight }}>
                     <motion.div
                         ref={element1Ref}
                         style={isFixed && !isEnd ? { position: "fixed", bottom: 0, left: 0, width: "100%" } : {}}

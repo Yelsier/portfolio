@@ -18,13 +18,19 @@ const Header = () => {
             <nav className={styles.menu} aria-label="Menú principal">
                 <ul className={styles.menulist}>
                     <li>
-                        ACERCA DE MÍ
+                        <a href="#about">
+                            ACERCA DE MÍ
+                        </a>
                     </li>
                     <li>
-                        CONOCIMIENTOS
+                        <a href="#knowledge">
+                            CONOCIMIENTOS
+                        </a>
                     </li>
                     <li>
-                        PROYECTOS
+                        <a href="#projects">
+                            PROYECTOS
+                        </a>
                     </li>
                 </ul>
             </nav>

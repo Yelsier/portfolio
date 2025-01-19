@@ -6,7 +6,7 @@ const REFINERY = localFont({ src: '../../../public/fonts/Refinery-25.ttf' })
 
 const Knowledge = () => {
 
-    return <section className={`${styles.knowledge}`}>
+    return <section id="knowledge" className={`${styles.knowledge}`}>
         <div className={styles.decorBottom}>
         /// SKILLS.MODULE
             <br />
