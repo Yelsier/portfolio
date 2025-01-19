@@ -1,13 +1,11 @@
-import localFont from "next/font/local";
 import styles from "./About.module.css"
-
-const REFINERY = localFont({ src: '../../../public/fonts/Refinery-25.ttf' })
+import SectionTitle from "../Components/SectionTitle";
 
 const About = () => {
 
-    return <section id="about" className={`${styles.about} `}>
+    return <section id="about" className={`${styles.about} pt-32 `}>
         <div className="mx-auto w-4/5 max-w-[700px] relative">
-            <h2 style={REFINERY.style} className={"text-white mb-10 text-7xl"}>ACERCA DE MÍ</h2>
+            <SectionTitle>ACERCA DE MÍ</SectionTitle>
             <div className="mb-10">
                 <div className={styles.cajaDescripcion}>/// ABOUT.DESCRIPTION_1</div>
                 <div className="flex gap-1">

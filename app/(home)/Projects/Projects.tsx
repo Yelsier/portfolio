@@ -1,12 +1,10 @@
-import localFont from "next/font/local";
 import styles from "./Projects.module.css"
 import Image from "next/image"
 import Link from "next/link";
 import NextJS from "@/public/logos/nextjs.svg"
 import WordPress from "@/public/logos/wordpress.svg"
 import Slider from "../Components/Slider";
-
-const REFINERY = localFont({ src: '../../../public/fonts/Refinery-25.ttf' })
+import SectionTitle from "../Components/SectionTitle";
 
 const projects = [
     {
@@ -44,15 +42,29 @@ const projects = [
         hechoEnImg: <WordPress />,
         link: "https://progatbadia.org"
     },
+    {
+        img: "asha.png",
+        title: "TERRITORI ASHA",
+        hechoEn: "WordPress",
+        hechoEnImg: <WordPress />,
+        link: "https://territorioasha.com"
+    },
+    {
+        img: "gabigo.webp",
+        title: "GABI GO",
+        hechoEn: "WordPress",
+        hechoEnImg: <WordPress />,
+        link: "https://gabigo.es"
+    },
 
 ]
 
 const Projects = () => {
 
-    return <section id="projects" className={`h-screen ${styles.projects}`}>
+    return <section id="projects" className={`h-screen pt-32 ${styles.projects}`}>
         <div className="">
-            <h2 style={REFINERY.style} className={"text-white mb-44 text-7xl"}>PROYECTOS</h2>
-            <Slider name="projects" gap={20} elements={projects.map((project, index) => {
+            <SectionTitle>PROYECTOS</SectionTitle>
+            <Slider name="projects" elements={projects.map((project, index) => {
                 return <div className="relative flex-shrink-0">
                     <div className={styles.cardDecor}>
                         PROJECT :: WEB_{index % projects.length}
@@ -60,7 +72,7 @@ const Projects = () => {
                     <div className={styles.card}>
                         <div className={styles.backdrop}>
                         </div>
-                        <Image src={`/projects_logos/${project.img}`} width={150} height={150} alt={`Logo ${project.title}`} />
+                        <Image className={styles.cardImage} src={`/projects_logos/${project.img}`} width={150} height={150} alt={`Logo ${project.title}`} />
                         <div className={styles.cardContent}>
                             <h3 className={styles.cardTitle}>{project.title}</h3>
                             <p className={styles.hechoEnContainer}><span>Hecho en:</span><span className={styles.hechoEn}>{project.hechoEnImg} {project.hechoEn}</span></p>

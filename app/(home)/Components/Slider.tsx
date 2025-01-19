@@ -7,7 +7,7 @@ import { JSX } from "react/jsx-runtime";
 
 const DEFAULT_FAST_DURATION = 35
 const DEFAULT_SLOW_DURATION = 90
-const DEFAULT_GAP = 10
+const DEFAULT_GAP = 50
 
 const Slider: React.FC<{ elements: JSX.Element[], name: string, gap?: number, fastDuration?: number, slowDuration?: number }> = ({ elements, name, gap, fastDuration, slowDuration }) => {
 
@@ -49,9 +49,9 @@ const Slider: React.FC<{ elements: JSX.Element[], name: string, gap?: number, fa
     return <>
         <div className={"py-5"}>
             <motion.div
-                className={`flex gap-${(gap || DEFAULT_GAP)} w-max`}
+                className={`flex w-max`}
                 ref={ref}
-                style={{ x: xTranslation }}
+                style={{ x: xTranslation, gap: gap || DEFAULT_GAP }}
                 key={"carousel"}
                 onHoverStart={() => {
                     setMustFinish(true);

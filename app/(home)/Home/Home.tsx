@@ -15,10 +15,10 @@ const Home = () => {
         <div className="mx-auto w-4/5 max-w-[1200px] relative">
             <div className="flex items-center justify-center h-screen ">
                 <div className="flex flex-col">
-                    <h1 className={`${SAIBA.className} ${titleStyles.title}`}><span title="Yago">Yago</span> <span title="Claros">Claros</span> <span title="Seijo">Seijo</span></h1>
-                    <div className="mt-10 flex items-center justify-between">
+                    <h1 className={`text-6xl sm:text-7xl md:text-8xl lg:text-7xl xl:text-8xl 2xl:text-9xl lg:flex-row lg:gap-10 flex flex-col ${SAIBA.className} ${titleStyles.title}`}><span title="Yago">Yago</span> <span title="Claros">Claros</span> <span title="Seijo">Seijo</span></h1>
+                    <div className="lg:flex-row mt-10 flex items-center justify-between flex-col gap-10" >
                         <h2 className={titleStyles.subtitle}>FULL STACK DEVELOPER</h2>
-                        <div className="flex items-center justify-center gap-10">
+                        <div className="sm:flex-row flex items-center justify-center flex-col gap-10">
                             <Link title="LinkedIn" href={"https://www.linkedin.com/in/yago-claros/"} target="_blank" className={styles.enlace}>
                                 <FontAwesomeIcon className="w-[20px]" icon={faLinkedin} />
                                 <span>LinkedIn</span>
