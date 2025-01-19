@@ -18,14 +18,14 @@ const TabsKnowledge = () => {
             </ul>
         </nav>
         <div className={styles.tabContent}>
-            <h3 className="hidden">Lenguajes de programación</h3>
+            <h3 className="hidden">Código</h3>
             <ul style={{ display: tab == "codigo" ? "block" : "none" }}>
                 <li>
                     <div className={styles.decorText}></div>
                     <div className={styles.contentList}>
                         <div className="flex items-center gap-4">
                             <icons.HTML />
-                            <span>HTML</span>
+                            <h4>HTML</h4>
                         </div>
                         <div>
                             100%
@@ -37,7 +37,7 @@ const TabsKnowledge = () => {
                     <div className={styles.contentList}>
                         <div className="flex items-center gap-4">
                             <icons.CSS />
-                            <span>CSS</span>
+                            <h4>CSS</h4>
                         </div>
                         <div>
                             100%
@@ -49,7 +49,7 @@ const TabsKnowledge = () => {
                     <div className={styles.contentList}>
                         <div className="flex items-center gap-4">
                             <icons.TypeScript />
-                            <span>TypeScript</span>
+                            <h4>TypeScript</h4>
                         </div>
                         <div>
                             95%
@@ -61,7 +61,7 @@ const TabsKnowledge = () => {
                     <div className={styles.contentList}>
                         <div className="flex items-center gap-4">
                             <icons.Java />
-                            <span>Java</span>
+                            <h4>Java</h4>
                         </div>
                         <div>
                             90%
@@ -73,7 +73,7 @@ const TabsKnowledge = () => {
                     <div className={styles.contentList}>
                         <div className="flex items-center gap-4">
                             <icons.CSharp />
-                            <span>C#</span>
+                            <h4>C#</h4>
                         </div>
                         <div>
                             90%
@@ -85,7 +85,7 @@ const TabsKnowledge = () => {
                     <div className={styles.contentList}>
                         <div className="flex items-center gap-4">
                             <icons.PHP />
-                            <span>PHP</span>
+                            <h4>PHP</h4>
                         </div>
                         <div>
                             70%
@@ -97,7 +97,7 @@ const TabsKnowledge = () => {
                     <div className={styles.contentList}>
                         <div className="flex items-center gap-4">
                             <icons.CPlusPlus />
-                            <span>C++</span>
+                            <h4>C++</h4>
                         </div>
                         <div>
                             70%
@@ -109,7 +109,7 @@ const TabsKnowledge = () => {
                     <div className={styles.contentList}>
                         <div className="flex items-center gap-4">
                             <icons.Python />
-                            <span>Python</span>
+                            <h4>Python</h4>
                         </div>
                         <div>
                             70%
@@ -124,7 +124,7 @@ const TabsKnowledge = () => {
                     <div className={styles.contentList}>
                         <div className="flex items-center gap-4">
                             <icons.MongoDB />
-                            <span>MongoDB</span>
+                            <h4>MongoDB</h4>
                         </div>
                         <div>
                             95%
@@ -136,7 +136,7 @@ const TabsKnowledge = () => {
                     <div className={styles.contentList}>
                         <div className="flex items-center gap-4">
                             <icons.MongoDB />
-                            <span>Mongoose</span>
+                            <h4>Mongoose</h4>
                         </div>
                         <div>
                             90%
@@ -148,7 +148,7 @@ const TabsKnowledge = () => {
                     <div className={styles.contentList}>
                         <div className="flex items-center gap-4">
                             <icons.Prisma />
-                            <span>Prisma ORM</span>
+                            <h4>Prisma ORM</h4>
                         </div>
                         <div>
                             90%
@@ -160,7 +160,7 @@ const TabsKnowledge = () => {
                     <div className={styles.contentList}>
                         <div className="flex items-center gap-4">
                             <icons.PostgreSQL />
-                            <span>PostgreSQL</span>
+                            <h4>PostgreSQL</h4>
                         </div>
                         <div>
                             85%
@@ -172,7 +172,7 @@ const TabsKnowledge = () => {
                     <div className={styles.contentList}>
                         <div className="flex items-center gap-4">
                             <icons.MySQL />
-                            <span>MySQL</span>
+                            <h4>MySQL</h4>
                         </div>
                         <div>
                             80%
@@ -187,7 +187,7 @@ const TabsKnowledge = () => {
                     <div className={styles.contentList}>
                         <div className="flex items-center gap-4">
                             <icons.NextJS />
-                            <span>NextJS</span>
+                            <h4>NextJS</h4>
                         </div>
                         <div>
                             95%
@@ -199,7 +199,7 @@ const TabsKnowledge = () => {
                     <div className={styles.contentList}>
                         <div className="flex items-center gap-4">
                             <icons.React />
-                            <span>React</span>
+                            <h4>React</h4>
                         </div>
                         <div>
                             95%
@@ -211,7 +211,7 @@ const TabsKnowledge = () => {
                     <div className={styles.contentList}>
                         <div className="flex items-center gap-4">
                             <icons.Azure />
-                            <span>Azure</span>
+                            <h4>Azure</h4>
                         </div>
                         <div>
                             90%
@@ -223,7 +223,7 @@ const TabsKnowledge = () => {
                     <div className={styles.contentList}>
                         <div className="flex items-center gap-4">
                             <icons.WordPress />
-                            <span>WordPress</span>
+                            <h4>WordPress</h4>
                         </div>
                         <div>
                             90%
@@ -235,7 +235,7 @@ const TabsKnowledge = () => {
                     <div className={styles.contentList}>
                         <div className="flex items-center gap-4">
                             <icons.NodeJS />
-                            <span>NodeJS</span>
+                            <h4>NodeJS</h4>
                         </div>
                         <div>
                             85%
@@ -247,7 +247,7 @@ const TabsKnowledge = () => {
                     <div className={styles.contentList}>
                         <div className="flex items-center gap-4">
                             <icons.Vercel />
-                            <span>Vercel</span>
+                            <h4>Vercel</h4>
                         </div>
                         <div>
                             75%
@@ -259,7 +259,7 @@ const TabsKnowledge = () => {
                     <div className={styles.contentList}>
                         <div className="flex items-center gap-4">
                             <icons.GitHub />
-                            <span>Github</span>
+                            <h4>Github</h4>
                         </div>
                         <div>
                             75%
@@ -274,7 +274,7 @@ const TabsKnowledge = () => {
                     <div className={styles.contentList}>
                         <div className="flex items-center gap-4">
                             <icons.VSCode />
-                            <span>VSCode</span>
+                            <h4>VSCode</h4>
                         </div>
                         <div>
                             95%
@@ -286,7 +286,7 @@ const TabsKnowledge = () => {
                     <div className={styles.contentList}>
                         <div className="flex items-center gap-4">
                             <icons.Git />
-                            <span>Git</span>
+                            <h4>Git</h4>
                         </div>
                         <div>
                             90%
@@ -298,7 +298,7 @@ const TabsKnowledge = () => {
                     <div className={styles.contentList}>
                         <div className="flex items-center gap-4">
                             <icons.MOffice />
-                            <span>Microsoft Office</span>
+                            <h4>Microsoft Office</h4>
                         </div>
                         <div>
                             90%
@@ -310,7 +310,7 @@ const TabsKnowledge = () => {
                     <div className={styles.contentList}>
                         <div className="flex items-center gap-4">
                             <icons.Figma />
-                            <span>Figma</span>
+                            <h4>Figma</h4>
                         </div>
                         <div>
                             50%
@@ -322,7 +322,7 @@ const TabsKnowledge = () => {
                     <div className={styles.contentList}>
                         <div className="flex items-center gap-4">
                             <icons.Docker />
-                            <span>Docker</span>
+                            <h4>Docker</h4>
                         </div>
                         <div>
                             40%
