@@ -2,6 +2,8 @@
     background: linear-gradient(180deg, rgb(20, 0, 0), rgb(0, 10, 20));
     max-width: 100%;
     overflow-x: hidden;
+    position: relative;
+    z-index: 0;
 }
 
 .home::after {
@@ -13,6 +15,7 @@
     pointer-events: none;
     position: absolute;
     width: 100%;
+    z-index: 0;
 }
 
 .enlace {

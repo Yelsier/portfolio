@@ -12,8 +12,8 @@ const Home = () => {
 
     return <section className={`h-screen ${styles.home}`}>
         <Background />
-        <div className="mx-auto w-4/5 max-w-[1200px] relative">
-            <div className="flex items-center justify-center h-screen ">
+        <div className="mx-auto w-4/5 max-w-[1200px] relative z-10">
+            <div className="flex items-center justify-center h-screen">
                 <div className="flex flex-col">
                     <h1 className={`text-6xl sm:text-7xl md:text-8xl lg:text-7xl xl:text-8xl 2xl:text-9xl lg:flex-row lg:gap-10 flex flex-col ${SAIBA.className} ${titleStyles.title}`}><span title="Yago">Yago</span> <span title="Claros">Claros</span> <span title="Seijo">Seijo</span></h1>
                     <div className="lg:flex-row mt-10 flex items-center justify-between flex-col gap-10" >
