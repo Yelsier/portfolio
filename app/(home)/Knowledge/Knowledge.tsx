@@ -4,7 +4,7 @@ import SectionTitle from "../Components/SectionTitle";
 
 const Knowledge = () => {
 
-    return <section id="knowledge" className={`pt-32 2xl:pt-20 ${styles.knowledge}`}>
+    return <section id="knowledge" role="region" className={`pt-32 2xl:pt-20 ${styles.knowledge}`}>
         <div className={styles.decorBottom}>
             {"///"} SKILLS.MODULE
             <br />

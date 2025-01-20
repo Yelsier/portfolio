@@ -90,6 +90,7 @@ const GlitchEffect: React.FC = () => {
                 height: "100vh",
                 overflow: "hidden",
             }}
+            data-testid="background"
         >
             {squares.map((square) => (
                 <div

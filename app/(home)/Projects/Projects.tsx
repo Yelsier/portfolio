@@ -61,11 +61,11 @@ const projects = [
 
 const Projects = () => {
 
-    return <section id="projects" className={`h-screen pt-32 ${styles.projects}`}>
+    return <section role="region" id="projects" className={`h-screen pt-32 ${styles.projects}`}>
         <div className="">
             <SectionTitle>PROYECTOS</SectionTitle>
-            <Slider name="projects" elements={projects.map((project, index) => {
-                return <div key={project.title + "_" + index} className="relative flex-shrink-0">
+            <Slider id="slider" name="projects" elements={projects.map((project, index) => {
+                return <div data-testid="project" key={project.title + "_" + index} className="relative flex-shrink-0">
                     <div className={styles.cardDecor}>
                         PROJECT :: WEB_{index % projects.length}
                     </div>

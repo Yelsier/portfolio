@@ -8,7 +8,7 @@ const TabsKnowledge = () => {
 
     const [tab, setTab] = useState("codigo");
 
-    return <>
+    return <div data-testid="tabs-knowledge">
         <nav className={styles.tabs}>
             <ul>
                 <li onClick={() => setTab("codigo")} className={`${tab == "codigo" ? styles.current : ""}`}>Código</li>
@@ -331,7 +331,7 @@ const TabsKnowledge = () => {
                 </li>
             </ul>
         </div>
-    </>
+    </div>
 }
 
 export default TabsKnowledge;

@@ -9,7 +9,7 @@ const DEFAULT_FAST_DURATION = 35
 const DEFAULT_SLOW_DURATION = 90
 const DEFAULT_GAP = 50
 
-const Slider: React.FC<{ elements: JSX.Element[], name: string, gap?: number, fastDuration?: number, slowDuration?: number }> = ({ elements, name, gap, fastDuration, slowDuration }) => {
+const Slider: React.FC<{ elements: JSX.Element[], name: string, id?: string, gap?: number, fastDuration?: number, slowDuration?: number }> = ({ elements, name, id, gap, fastDuration, slowDuration }) => {
 
     const [duration, setDuration] = useState((fastDuration || DEFAULT_FAST_DURATION))
 
@@ -47,7 +47,7 @@ const Slider: React.FC<{ elements: JSX.Element[], name: string, gap?: number, fa
     }, [xTranslation, width, duration, rerender])
 
     return <>
-        <div className={"py-5"}>
+        <div id={id} className={"py-5"} role="list">
             <motion.div
                 className={`flex w-max`}
                 ref={ref}

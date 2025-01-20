@@ -10,7 +10,7 @@ const SAIBA = localFont({ src: '../../../public/fonts/SAIBA-45.otf' })
 
 const Home = () => {
 
-    return <section className={`h-screen ${styles.home}`}>
+    return <section role="region" className={`h-screen ${styles.home}`}>
         <Background />
         <div className="mx-auto w-4/5 max-w-[1200px] relative z-10">
             <div className="flex items-center justify-center h-screen">
