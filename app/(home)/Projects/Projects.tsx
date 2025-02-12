@@ -64,6 +64,7 @@ const Projects = () => {
     return <section role="region" id="projects" className={`h-screen pt-32 ${styles.projects}`}>
         <div className="">
             <SectionTitle>PROYECTOS</SectionTitle>
+            <p className={styles.propiedad}>Todos los proyectos son propiedad de <Link href={"https://reparapcs.com"}>À-ser reparapcs</Link></p>
             <Slider id="slider" name="projects" elements={projects.map((project, index) => {
                 return <div data-testid="project" key={project.title + "_" + index} className="relative flex-shrink-0">
                     <div className={styles.cardDecor}>
@@ -76,6 +77,7 @@ const Projects = () => {
                         <div className={styles.cardContent}>
                             <h3 className={styles.cardTitle}>{project.title}</h3>
                             <p className={styles.hechoEnContainer}><span>Hecho en:</span><span className={styles.hechoEn}>{project.hechoEnImg} {project.hechoEn}</span></p>
+                            <p className={styles.hechoEnContainer}>Dearrollado en: <Link className={styles.hechoEn} href="https://reparapcs.com">Reparapcs</Link></p>
                             <Link className={styles.cardLink} href={project.link} target="_blank">Ver</Link>
                         </div>
                     </div>

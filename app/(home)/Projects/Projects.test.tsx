@@ -21,9 +21,9 @@ describe('Projects Component', () => {
     });
 
     test('displays the correct section title', () => {
-        const titleElement = screen.getByText(/proyectos/i);
+        const titleElement = screen.getByText("PROYECTOS");
         expect(titleElement).toBeInTheDocument();
-        expect(titleElement.tagName).toBe("H2");
+        expect(titleElement.tagName).toBe('H2');
     });
 
     test('renders Slider component', () => {

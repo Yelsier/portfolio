@@ -153,3 +153,12 @@
 .card:hover .backdrop {
     opacity: 1;
 }
+
+.propiedad {
+    color: white;
+    font-family: var(--font-play), sans-serif;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 0px 0px 10px white, 1px 0px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+}
