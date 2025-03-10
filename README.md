@@ -37,7 +37,7 @@ Sigue estos pasos para ejecutar el proyecto en tu entorno local:
 
 1. Clona este repositorio:
    ```bash
-   git clone https://github.com/tu-usuario/tu-repositorio.git
+   git clone https://github.com/Yelsier/portfolio.git
    ```
 
 2. Instala las dependencias:
