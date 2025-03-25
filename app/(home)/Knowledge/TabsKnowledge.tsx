@@ -1,335 +1,179 @@
 "use client"
 
-import { useState } from "react";
+import { JSX, SVGProps, useState } from "react";
 import styles from "./Knowledge.module.css"
 import icons from "../Components/SVGIcons";
 
+const skillsList: { [key: string]: { title: string, percent: number, icon: (props: SVGProps<SVGSVGElement>) => JSX.Element }[] } = {
+    "Código": [
+        {
+            title: "HTML",
+            percent: 100,
+            icon: icons.HTML
+        },
+        {
+            title: "CSS",
+            percent: 100,
+            icon: icons.CSS
+        },
+        {
+            title: "TypeScript",
+            percent: 95,
+            icon: icons.TypeScript
+        },
+        {
+            title: "Java",
+            percent: 90,
+            icon: icons.Java
+        },
+        {
+            title: "C#",
+            percent: 90,
+            icon: icons.CSharp
+        },
+        {
+            title: "PHP",
+            percent: 70,
+            icon: icons.PHP
+        },
+        {
+            title: "C++",
+            percent: 70,
+            icon: icons.CPlusPlus
+        },
+        {
+            title: "Python",
+            percent: 70,
+            icon: icons.Python
+        }
+    ],
+    "Bases de datos": [
+        {
+            title: "MongoDB",
+            percent: 95,
+            icon: icons.MongoDB
+        },
+        {
+            title: "Mongoose",
+            percent: 90,
+            icon: icons.MongoDB
+        },
+        {
+            title: "Prisma ORM",
+            percent: 90,
+            icon: icons.Prisma
+        },
+        {
+            title: "PostgreSQL",
+            percent: 85,
+            icon: icons.PostgreSQL
+        },
+        {
+            title: "MySQL",
+            percent: 80,
+            icon: icons.MySQL
+        }
+    ],
+    "Plataformas": [
+        {
+            title: "NextJS",
+            percent: 95,
+            icon: icons.NextJS
+        },
+        {
+            title: "React",
+            percent: 95,
+            icon: icons.React
+        },
+        {
+            title: "Azure",
+            percent: 90,
+            icon: icons.Azure
+        },
+        {
+            title: "WordPress",
+            percent: 90,
+            icon: icons.WordPress
+        },
+        {
+            title: "NodeJS",
+            percent: 85,
+            icon: icons.NodeJS
+        },
+        {
+            title: "Vercel",
+            percent: 75,
+            icon: icons.Vercel
+        },
+        {
+            title: "Github",
+            percent: 75,
+            icon: icons.GitHub
+        }
+    ],
+    "Herramientas": [
+        {
+            title: "VSCode",
+            percent: 95,
+            icon: icons.VSCode
+        },
+        {
+            title: "Git",
+            percent: 90,
+            icon: icons.Git
+        },
+        {
+            title: "Microsoft Office",
+            percent: 90,
+            icon: icons.MOffice
+        },
+        {
+            title: "Figma",
+            percent: 50,
+            icon: icons.Figma
+        },
+        {
+            title: "Docker",
+            percent: 40,
+            icon: icons.Docker
+        }
+    ]
+}
+
 const TabsKnowledge = () => {
 
-    const [tab, setTab] = useState("codigo");
+    const [tab, setTab] = useState("Código");
 
     return <div data-testid="tabs-knowledge">
         <nav className={styles.tabs}>
             <ul>
-                <li onClick={() => setTab("codigo")} className={`${tab == "codigo" ? styles.current : ""}`}>Código</li>
-                <li onClick={() => setTab("db")} className={`${tab == "db" ? styles.current : ""}`}>Bases de datos</li>
-                <li onClick={() => setTab("platforms")} className={`${tab == "platforms" ? styles.current : ""}`}>Plataformas</li>
-                <li onClick={() => setTab("tools")} className={`${tab == "tools" ? styles.current : ""}`}>Herramientas</li>
+                {Object.keys(skillsList).map((key) => {
+                    return <li key={`${key}_menu`} onClick={() => setTab(key)} className={`${tab == key ? styles.current : ""}`}>{key}</li>
+                })}
             </ul>
         </nav>
         <div className={styles.tabContent}>
-            <h3 className="hidden">Código</h3>
-            <ul style={{ display: tab == "codigo" ? "block" : "none" }}>
-                <li>
-                    <div className={styles.decorText}></div>
-                    <div className={styles.contentList}>
-                        <div className="flex items-center gap-4">
-                            <icons.HTML />
-                            <h4>HTML</h4>
-                        </div>
-                        <div>
-                            100%
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div className={styles.decorText}></div>
-                    <div className={styles.contentList}>
-                        <div className="flex items-center gap-4">
-                            <icons.CSS />
-                            <h4>CSS</h4>
-                        </div>
-                        <div>
-                            100%
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div className={styles.decorText}></div>
-                    <div className={styles.contentList}>
-                        <div className="flex items-center gap-4">
-                            <icons.TypeScript />
-                            <h4>TypeScript</h4>
-                        </div>
-                        <div>
-                            95%
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div className={styles.decorText}></div>
-                    <div className={styles.contentList}>
-                        <div className="flex items-center gap-4">
-                            <icons.Java />
-                            <h4>Java</h4>
-                        </div>
-                        <div>
-                            90%
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div className={styles.decorText}></div>
-                    <div className={styles.contentList}>
-                        <div className="flex items-center gap-4">
-                            <icons.CSharp />
-                            <h4>C#</h4>
-                        </div>
-                        <div>
-                            90%
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div className={styles.decorText}></div>
-                    <div className={styles.contentList}>
-                        <div className="flex items-center gap-4">
-                            <icons.PHP />
-                            <h4>PHP</h4>
-                        </div>
-                        <div>
-                            70%
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div className={styles.decorText}></div>
-                    <div className={styles.contentList}>
-                        <div className="flex items-center gap-4">
-                            <icons.CPlusPlus />
-                            <h4>C++</h4>
-                        </div>
-                        <div>
-                            70%
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div className={styles.decorText}></div>
-                    <div className={styles.contentList}>
-                        <div className="flex items-center gap-4">
-                            <icons.Python />
-                            <h4>Python</h4>
-                        </div>
-                        <div>
-                            70%
-                        </div>
-                    </div>
-                </li>
-            </ul>
-            <h3 className="hidden">Bases de datos</h3>
-            <ul style={{ display: tab == "db" ? "block" : "none" }}>
-                <li>
-                    <div className={styles.decorText}></div>
-                    <div className={styles.contentList}>
-                        <div className="flex items-center gap-4">
-                            <icons.MongoDB />
-                            <h4>MongoDB</h4>
-                        </div>
-                        <div>
-                            95%
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div className={styles.decorText}></div>
-                    <div className={styles.contentList}>
-                        <div className="flex items-center gap-4">
-                            <icons.MongoDB />
-                            <h4>Mongoose</h4>
-                        </div>
-                        <div>
-                            90%
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div className={styles.decorText}></div>
-                    <div className={styles.contentList}>
-                        <div className="flex items-center gap-4">
-                            <icons.Prisma />
-                            <h4>Prisma ORM</h4>
-                        </div>
-                        <div>
-                            90%
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div className={styles.decorText}></div>
-                    <div className={styles.contentList}>
-                        <div className="flex items-center gap-4">
-                            <icons.PostgreSQL />
-                            <h4>PostgreSQL</h4>
-                        </div>
-                        <div>
-                            85%
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div className={styles.decorText}></div>
-                    <div className={styles.contentList}>
-                        <div className="flex items-center gap-4">
-                            <icons.MySQL />
-                            <h4>MySQL</h4>
-                        </div>
-                        <div>
-                            80%
-                        </div>
-                    </div>
-                </li>
-            </ul>
-            <h3 className="hidden">Plataformas</h3>
-            <ul style={{ display: tab == "platforms" ? "block" : "none" }}>
-                <li>
-                    <div className={styles.decorText}></div>
-                    <div className={styles.contentList}>
-                        <div className="flex items-center gap-4">
-                            <icons.NextJS />
-                            <h4>NextJS</h4>
-                        </div>
-                        <div>
-                            95%
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div className={styles.decorText}></div>
-                    <div className={styles.contentList}>
-                        <div className="flex items-center gap-4">
-                            <icons.React />
-                            <h4>React</h4>
-                        </div>
-                        <div>
-                            95%
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div className={styles.decorText}></div>
-                    <div className={styles.contentList}>
-                        <div className="flex items-center gap-4">
-                            <icons.Azure />
-                            <h4>Azure</h4>
-                        </div>
-                        <div>
-                            90%
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div className={styles.decorText}></div>
-                    <div className={styles.contentList}>
-                        <div className="flex items-center gap-4">
-                            <icons.WordPress />
-                            <h4>WordPress</h4>
-                        </div>
-                        <div>
-                            90%
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div className={styles.decorText}></div>
-                    <div className={styles.contentList}>
-                        <div className="flex items-center gap-4">
-                            <icons.NodeJS />
-                            <h4>NodeJS</h4>
-                        </div>
-                        <div>
-                            85%
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div className={styles.decorText}></div>
-                    <div className={styles.contentList}>
-                        <div className="flex items-center gap-4">
-                            <icons.Vercel />
-                            <h4>Vercel</h4>
-                        </div>
-                        <div>
-                            75%
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div className={styles.decorText}></div>
-                    <div className={styles.contentList}>
-                        <div className="flex items-center gap-4">
-                            <icons.GitHub />
-                            <h4>Github</h4>
-                        </div>
-                        <div>
-                            75%
-                        </div>
-                    </div>
-                </li>
-            </ul>
-            <h3 className="hidden">Herramientas</h3>
-            <ul style={{ display: tab == "tools" ? "block" : "none" }}>
-                <li>
-                    <div className={styles.decorText}></div>
-                    <div className={styles.contentList}>
-                        <div className="flex items-center gap-4">
-                            <icons.VSCode />
-                            <h4>VSCode</h4>
-                        </div>
-                        <div>
-                            95%
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div className={styles.decorText}></div>
-                    <div className={styles.contentList}>
-                        <div className="flex items-center gap-4">
-                            <icons.Git />
-                            <h4>Git</h4>
-                        </div>
-                        <div>
-                            90%
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div className={styles.decorText}></div>
-                    <div className={styles.contentList}>
-                        <div className="flex items-center gap-4">
-                            <icons.MOffice />
-                            <h4>Microsoft Office</h4>
-                        </div>
-                        <div>
-                            90%
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div className={styles.decorText}></div>
-                    <div className={styles.contentList}>
-                        <div className="flex items-center gap-4">
-                            <icons.Figma />
-                            <h4>Figma</h4>
-                        </div>
-                        <div>
-                            50%
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div className={styles.decorText}></div>
-                    <div className={styles.contentList}>
-                        <div className="flex items-center gap-4">
-                            <icons.Docker />
-                            <h4>Docker</h4>
-                        </div>
-                        <div>
-                            40%
-                        </div>
-                    </div>
-                </li>
-            </ul>
+            {Object.keys(skillsList).map((key) => {
+                return <div key={`${key}_list`}>
+                    <h3 className="hidden">{key}</h3>
+                    <ul style={{ display: tab == key ? "block" : "none" }} >
+                        {skillsList[key].map((skill) => (
+                            <li key={skill.title}>
+                                <div className={styles.decorText}></div>
+                                <div className={styles.contentList}>
+                                    <div className="flex items-center gap-4">
+                                        <skill.icon />
+                                        <h4>{skill.title}</h4>
+                                    </div>
+                                    <div>
+                                        {skill.percent}%
+                                    </div>
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            })}
         </div>
     </div>
 }
