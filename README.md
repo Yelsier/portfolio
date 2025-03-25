@@ -1,6 +1,6 @@
 # Yago Claros Seijo | Full Stack Developer Portfolio
 
-Este es el código fuente de mi portfolio profesional, desarrollado con [Create Next App](https://nextjs.org/docs/api-reference/create-next-app) y utilizando tecnologías modernas como TypeScript, React y MongoDB.
+Este es el código fuente de mi portfolio profesional, desarrollado con [Create Next App](https://nextjs.org/docs/api-reference/create-next-app) y utilizando tecnologías modernas como TypeScript y React.
 
 ## 🚀 Tecnologías Utilizadas
 
@@ -37,7 +37,7 @@ Sigue estos pasos para ejecutar el proyecto en tu entorno local:
 
 1. Clona este repositorio:
    ```bash
-   git clone https://github.com/tu-usuario/tu-repositorio.git
+   git clone https://github.com/Yelsier/portfolio.git
    ```
 
 2. Instala las dependencias:
