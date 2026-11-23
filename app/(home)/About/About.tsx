@@ -11,14 +11,14 @@ const About = () => {
                 <div className={styles.cajaDescripcion}>{"///"} ABOUT.DESCRIPTION_1</div>
                 <div className="flex gap-1">
                     <div className={styles.decorText}></div>
-                    <p className="text-white text-lg lg:text-justify">Soy un desarrollador web autodidacta con experiencia en tecnologías como <icons.TypeScript /> TypeScript, <icons.React /> React y <icons.MongoDB /> MongoDB. Me apasiona crear sistemas que optimicen el desarrollo de aplicaciones, logrando que el proceso sea más ágil y eficiente.</p>
+                    <p className="text-white text-lg lg:text-justify">Soy desarrollador y aprendí a programar por mi cuenta. En mis proyectos suelo trabajar con <icons.TypeScript /> TypeScript, <icons.React /> React y <icons.MongoDB /> MongoDB.</p>
                 </div>
             </div>
             <div>
                 <div className={styles.cajaDescripcion}>{"///"} ABOUT.DESCRIPTION_2</div>
                 <div className="flex gap-1">
                     <div className={styles.decorText}></div>
-                    <p className="text-white text-lg lg:text-justify">Me destaco por ser resolutivo y por mi capacidad para analizar problemas desde múltiples perspectivas, identificando soluciones rápidas e innovadoras. <br /> Además, me mantengo en constante aprendizaje para estar siempre al día con las últimas tecnologías y tendencias del sector.</p>
+                    <p className="text-white text-lg lg:text-justify">Creo que me enganché a programar por lo mismo que me gustan los puzles. Disfruto dándole vueltas a un problema y probando ideas hasta que alguna encaja. Lo que más me tira es programar videojuegos. También me encanta optimizar las cosas. Cuando algo ya funciona, suelo seguir probando hasta que entra en mis baremos.</p>
                 </div>
             </div>
         </div>
