@@ -1,164 +1,180 @@
 .projects {
-    background: black;
-    min-height: 100vh;
-    pointer-events: all;
-    position: relative;
-    background-image: url(/dots-yellow-top.png), url(/dots-yellow-bottom.png);
-    background-position: 20px 20px, 20px calc(100% - 20px);
-    background-repeat: repeat-x, repeat-x;
+  background: black;
+  min-height: 100vh;
+  pointer-events: all;
+  position: relative;
+  background-image: url(/dots-yellow-top.png), url(/dots-yellow-bottom.png);
+  background-position:
+    20px 20px,
+    20px calc(100% - 20px);
+  background-repeat: repeat-x, repeat-x;
 }
 
 .projects h2 {
-    color: white;
-    font-family: var(--font-play), sans-serif;
-    font-weight: 700;
-    text-align: center;
-    text-shadow: -1px -1px var(--red-text), 1px 1px var(--blue);
+  color: white;
+  font-family: var(--font-play), sans-serif;
+  font-weight: 700;
+  text-align: center;
+  text-shadow:
+    -1px -1px var(--red-text),
+    1px 1px var(--blue);
 }
 
 .card {
-    display: flex;
-    gap: 2em;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid var(--yellow);
-    padding: 2em 3em;
-    box-shadow: 0 0 10px var(--red-text);
-    background: var(--red-background);
-    clip-path: polygon(30px 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 30px);
-    position: relative;
-    flex-direction: column;
+  display: flex;
+  gap: 2em;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--yellow);
+  padding: 2em 3em;
+  box-shadow: 0 0 10px var(--red-text);
+  background: var(--red-background);
+  clip-path: polygon(
+    30px 0,
+    100% 0,
+    100% calc(100% - 30px),
+    calc(100% - 30px) 100%,
+    0 100%,
+    0 30px
+  );
+  position: relative;
+  flex-direction: column;
 }
 
 .card::before {
-    border-right: 30px solid transparent;
-    border-top: 30px solid var(--yellow);
-    content: "";
-    left: 0;
-    position: absolute;
-    top: 0;
+  border-right: 30px solid transparent;
+  border-top: 30px solid var(--yellow);
+  content: "";
+  left: 0;
+  position: absolute;
+  top: 0;
 }
 
 .card::after {
-    border-bottom: 30px solid var(--yellow);
-    border-left: 30px solid transparent;
-    bottom: 0;
-    content: "";
-    position: absolute;
-    right: 0;
-    pointer-events: none;
+  border-bottom: 30px solid var(--yellow);
+  border-left: 30px solid transparent;
+  bottom: 0;
+  content: "";
+  position: absolute;
+  right: 0;
+  pointer-events: none;
 }
 
 .cardTitle {
-    color: var(--yellow);
-    text-shadow: 0px 0px 10px var(--yellow), 1px 0px rgba(0, 0, 0, 0.5);
-    font-family: var(--font-play), sans-serif;
-    font-weight: 700;
-    text-align: center;
-    font-size: 2em;
+  color: var(--yellow);
+  text-shadow:
+    0px 0px 10px var(--yellow),
+    1px 0px rgba(0, 0, 0, 0.5);
+  font-family: var(--font-play), sans-serif;
+  font-weight: 700;
+  text-align: center;
+  font-size: 2em;
 }
 
 .cardContent {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 
 .cardDecor {
-    position: absolute;
-    right: 0;
-    top: -25px;
-    color: var(--yellow);
-    text-shadow: 0px 0px 10px var(--yellow), 1px 0px rgba(0, 0, 0, 0.5);
-    font-family: var(--font-play), sans-serif;
-    opacity: 0.5;
+  position: absolute;
+  right: 0;
+  top: -25px;
+  color: var(--yellow);
+  text-shadow:
+    0px 0px 10px var(--yellow),
+    1px 0px rgba(0, 0, 0, 0.5);
+  font-family: var(--font-play), sans-serif;
+  opacity: 0.5;
 }
 
 .cardLink {
-    border: 1px solid white;
-    color: white;
-    font-family: var(--font-play), sans-serif;
-    font-weight: 700;
-    padding: 0.5em 1em;
-    text-align: center;
-    clip-path: polygon(100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 0);
-    position: relative;
-    z-index: 1;
+  border: 1px solid white;
+  color: white;
+  font-family: var(--font-play), sans-serif;
+  font-weight: 700;
+  padding: 0.5em 1em;
+  text-align: center;
+  clip-path: polygon(
+    100% 0,
+    100% calc(100% - 15px),
+    calc(100% - 15px) 100%,
+    0 100%,
+    0 0
+  );
+  position: relative;
+  z-index: 1;
 }
 
 .cardLink::after {
-    content: "";
-    border-bottom: 15px solid white;
-    border-left: 15px solid transparent;
-    bottom: 0;
-    content: "";
-    position: absolute;
-    right: 0;
-    pointer-events: none;
+  content: "";
+  border-bottom: 15px solid white;
+  border-left: 15px solid transparent;
+  bottom: 0;
+  content: "";
+  position: absolute;
+  right: 0;
+  pointer-events: none;
 }
 
 .cardLink:hover {
-    background: white;
-    color: black;
+  background: white;
+  color: black;
 }
 
 .cardImage {
-    width: 150px;
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    object-fit: contain;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
 }
 
 .hechoEnContainer {
-    display: flex;
-    gap: 0.5em;
-    align-items: center;
-    color: var(--yellow);
-    font-family: var(--font-play), sans-serif;
-    text-shadow: 0px 0px 10px var(--yellow), 1px 0px rgba(0, 0, 0, 0.5);
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+  color: var(--yellow);
+  font-family: var(--font-play), sans-serif;
+  text-shadow:
+    0px 0px 10px var(--yellow),
+    1px 0px rgba(0, 0, 0, 0.5);
 }
 
 .hechoEn {
-    display: flex;
-    gap: 5px;
-    align-items: center;
-    color: white;
-    text-shadow: 0px 0px 10px white, 1px 0px rgba(0, 0, 0, 0.5);
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  color: white;
+  text-shadow:
+    0px 0px 10px white,
+    1px 0px rgba(0, 0, 0, 0.5);
 }
 
 .hechoEn path {
-    fill: white
+  fill: white;
 }
 
 .hechoEn svg {
-    width: 12px;
-    height: 12px;
-    filter: drop-shadow(0 0 5px white);
+  width: 12px;
+  height: 12px;
+  filter: drop-shadow(0 0 5px white);
 }
 
 .backdrop {
-    position: absolute;
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    top: -2px;
-    left: -2px;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.3s;
+  position: absolute;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  top: -2px;
+  left: -2px;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
 .card:hover .backdrop {
-    opacity: 1;
-}
-
-.propiedad {
-    color: white;
-    font-family: var(--font-play), sans-serif;
-    font-weight: 700;
-    text-align: center;
-    text-shadow: 0px 0px 10px white, 1px 0px rgba(0, 0, 0, 0.5);
-    margin-bottom: 30px;
+  opacity: 1;
 }
