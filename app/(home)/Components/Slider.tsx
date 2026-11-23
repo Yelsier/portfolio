@@ -18,7 +18,6 @@ const Slider: React.FC<{ elements: JSX.Element[], name: string, id?: string, gap
     const xTranslation = useMotionValue(0);
 
     const [mustFinish, setMustFinish] = useState(false);
-    const [rerender, setRerender] = useState(false);
 
     useEffect(() => {
         let controls;
@@ -30,7 +29,6 @@ const Slider: React.FC<{ elements: JSX.Element[], name: string, id?: string, gap
                 ease: "linear",
                 onComplete: () => {
                     setMustFinish(false);
-                    setRerender(!rerender);
                 }
             });
         } else {
@@ -44,7 +42,7 @@ const Slider: React.FC<{ elements: JSX.Element[], name: string, id?: string, gap
         }
 
         return controls?.stop;
-    }, [xTranslation, width, duration, rerender])
+    }, [xTranslation, width, duration, gap, mustFinish])
 
     return <>
         <div id={id} className={"py-5"} role="list">

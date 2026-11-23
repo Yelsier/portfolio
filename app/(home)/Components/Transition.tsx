@@ -2,11 +2,12 @@
 
 import { useScroll, useMotionValueEvent, useTransform, useMotionTemplate, motion } from "framer-motion";
 import { useRef, useState } from "react";
+import useMeasure from "react-use-measure";
 
 const Transition: React.FC<{ FromElement: React.ReactNode, ToElement: React.ReactNode }> = ({ FromElement, ToElement }) => {
     const element1ContainerRef = useRef(null);
-    const element1Ref = useRef<HTMLDivElement>(null);
-    const element2Ref = useRef<HTMLDivElement>(null);
+    const [element1Ref, { height: fromHeight }] = useMeasure({ offsetSize: true });
+    const [element2Ref, { height: toHeight }] = useMeasure({ offsetSize: true });
     const [isFixed, setIsFixed] = useState(false); // Estado para controlar la posición
     const [isEnd, setIsEnd] = useState(false);
 
@@ -32,7 +33,7 @@ const Transition: React.FC<{ FromElement: React.ReactNode, ToElement: React.Reac
         <>
             <div className="relative">
                 {/* Aplicamos posición fija si `isFixed` es true */}
-                <div className="relative" ref={element1ContainerRef} style={{ height: element1Ref?.current?.offsetHeight }}>
+                <div className="relative" ref={element1ContainerRef} style={{ height: fromHeight || undefined }}>
                     <motion.div
                         ref={element1Ref}
                         style={isFixed && !isEnd ? { position: "fixed", bottom: 0, left: 0, width: "100%" } : {}}
@@ -40,7 +41,7 @@ const Transition: React.FC<{ FromElement: React.ReactNode, ToElement: React.Reac
                         {FromElement}
                     </motion.div>
                 </div>
-                <div className="pointer-events-none" style={{ height: element2Ref?.current?.offsetHeight }}>
+                <div className="pointer-events-none" style={{ height: toHeight || undefined }}>
                     <div
                         style={isFixed && !isEnd ? { position: "fixed", bottom: 0, left: 0, width: "100%" } : {}}
                     >

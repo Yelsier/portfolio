@@ -76,10 +76,12 @@ const GlitchEffect: React.FC = () => {
             return newSquares;
         };
 
-        const whiteSquares = generateSquares(maxSquares, "white", 0); // Blancos en la parte superior
-        const blackSquares = generateSquares(maxSquares, "gray", 100); // Negros en la parte inferior
-
-        setSquares([...whiteSquares, ...blackSquares]);
+        const frame = requestAnimationFrame(() => {
+            const whiteSquares = generateSquares(maxSquares, "white", 0);
+            const blackSquares = generateSquares(maxSquares, "gray", 100);
+            setSquares([...whiteSquares, ...blackSquares]);
+        });
+        return () => cancelAnimationFrame(frame);
     }, []);
 
     return (
